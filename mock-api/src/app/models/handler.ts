@@ -63,7 +63,7 @@ export interface Operation {
   kind: string
   operation: string
   name: PurpleName
-  variableDefinitions: Array<NameElement[]>
+  variableDefinitions: NameElement[][]
   directives: unknown[]
   selectionSet: SelectionSet
   loc: LOC

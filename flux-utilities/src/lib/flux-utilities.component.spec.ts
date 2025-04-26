@@ -8,9 +8,8 @@ describe('FluxUtilitiesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FluxUtilitiesComponent]
-    })
-    .compileComponents();
+      imports: [FluxUtilitiesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FluxUtilitiesComponent);
     component = fixture.componentInstance;
