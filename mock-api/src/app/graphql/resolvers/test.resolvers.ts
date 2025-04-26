@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Arg, Ctx, Info, Query, Resolver } from 'type-graphql'
 import type { GraphQlInfo, MockContext } from '@/app/models/handler'
 import { Mock } from '../types/mock.types'
@@ -10,7 +9,7 @@ export class TestingResolver {
   async getTest(
     @Ctx() ctx: MockContext,
     @Info() info: GraphQlInfo,
-    @Arg('testType', { defaultValue: null }) _testType: string,
+    @Arg('testType', { defaultValue: null }) _: string,
   ): Promise<Mock[]> {
     return mockFetch<Mock[]>(info, ctx)
   }
