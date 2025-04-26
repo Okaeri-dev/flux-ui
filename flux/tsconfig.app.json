@@ -4,12 +4,15 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@flux-assets/*": ["assets/*"],
+      "@flux-services/*": ["app/services/*"],
+      "@flux-components/*": ["app/components/*"],
+      "@flux-models/*": ["app/models/*"],
+      "@flux-store/*": ["app/store/*"]
+    }
   },
-  "files": [
-    "src/main.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"]
 }

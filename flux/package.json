@@ -1,0 +1,32 @@
+{
+  "name": "flux",
+  "version": "0.1.0",
+  "scripts": {
+    "ng": "ng",
+    "pretty": "esliny . --ext .ts,.js",
+    "start": "ng serve --verbose --live-reload -o --poll 1000",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.0",
+    "@angular/material": "18.2.14",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.12",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.4.2"
+  }
+}
