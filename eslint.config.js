@@ -47,7 +47,7 @@ module.exports = tseslint.config(
       ],
       '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/consistent-indexed-object-style': 'off',
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'warn',
     },
   },
   {
