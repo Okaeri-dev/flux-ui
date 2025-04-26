@@ -1,4 +1,3 @@
- 
 import { Ctx, Info, Query, Resolver } from 'type-graphql'
 import { Mock } from '../types/mock.types'
 import { mockFetch } from '@/app/utils/mockFetch'
