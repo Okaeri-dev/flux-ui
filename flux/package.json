@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "pretty": "esliny . --ext .ts,.js",
+    "pretty": "eslint . --ext .ts,.js",
     "start": "ng serve --verbose --live-reload -o --poll 1000",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
