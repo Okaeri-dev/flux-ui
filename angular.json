@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "",
   "projects": {
     "flux": {
       "projectType": "application",
@@ -10,29 +10,29 @@
           "style": "scss"
         }
       },
-      "root": "projects/flux",
-      "sourceRoot": "projects/flux/src",
+      "root": "flux",
+      "sourceRoot": "flux/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/flux",
-            "index": "projects/flux/src/index.html",
-            "browser": "projects/flux/src/main.ts",
+            "index": "flux/src/index.html",
+            "browser": "flux/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/flux/tsconfig.app.json",
+            "tsConfig": "flux/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/flux/public"
+                "input": "flux/public"
               }
             ],
             "styles": [
-              "projects/flux/src/styles.scss"
+              "flux/src/styles.scss"
             ],
             "scripts": []
           },
@@ -82,18 +82,51 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/flux/tsconfig.spec.json",
+            "tsConfig": "flux/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/flux/public"
+                "input": "flux/public"
               }
             ],
             "styles": [
-              "projects/flux/src/styles.scss"
+              "flux/src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "flux-utilities": {
+      "projectType": "library",
+      "root": "flux-utilities",
+      "sourceRoot": "flux-utilities/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "flux-utilities/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "flux-utilities/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "flux-utilities/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "flux-utilities/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
