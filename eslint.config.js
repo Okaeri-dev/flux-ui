@@ -17,33 +17,20 @@ module.exports = tseslint.config(
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
     ],
-    plugins: {
-      prettier,
-    },
+    plugins: { prettier },
     processor: angular.processInlineTemplates,
     rules: {
       '@angular-eslint/directive-selector': [
         'error',
-        {
-          type: 'attribute',
-          prefix: 'app|lib',
-          style: 'camelCase',
-        },
+        { type: 'attribute', prefix: 'app|lib', style: 'camelCase' },
       ],
       '@angular-eslint/component-selector': [
         'error',
-        {
-          type: 'element',
-          prefix: 'app|lib',
-          style: 'kebab-case',
-        },
+        { type: 'element', prefix: 'app|lib', style: 'kebab-case' },
       ],
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        {
-          varsIgnorePattern: '^(_|[A-Z]+)$',
-          argsIgnorePattern: '^(_|[A-Z]+)$',
-        },
+        { varsIgnorePattern: '^(_|[A-Z]+)$', argsIgnorePattern: '^(_|[A-Z]+)$' },
       ],
       '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/consistent-indexed-object-style': 'off',
@@ -52,20 +39,15 @@ module.exports = tseslint.config(
   },
   {
     files: ['**/*.html'],
+    ignores: ['mock-api/.next/**', '**/index.html'],
     extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
-    rules: {},
+    plugins: { prettier },
+    rules: { 'prettier/prettier': 'warn' },
   },
   {
     files: ['**/*.json'],
-    languageOptions: {
-      parser: jsoncParser,
-    },
-    plugins: {
-      jsonc,
-    },
-    rules: {
-      'jsonc/indent': ['error', 2],
-      'jsonc/no-comments': 'off',
-    },
+    languageOptions: { parser: jsoncParser },
+    plugins: { jsonc },
+    rules: { 'jsonc/indent': ['error', 2], 'jsonc/no-comments': 'off' },
   },
 );
