@@ -7,9 +7,7 @@ describe('FluxUtilitiesComponent', () => {
   let fixture: ComponentFixture<FluxUtilitiesComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [FluxUtilitiesComponent],
-    }).compileComponents();
+    await TestBed.configureTestingModule({ imports: [FluxUtilitiesComponent] }).compileComponents();
 
     fixture = TestBed.createComponent(FluxUtilitiesComponent);
     component = fixture.componentInstance;
