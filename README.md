@@ -57,3 +57,76 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## 🗂️ Monorepo Folder Structure
+
+```text
+
+├── angular.json                      # Root angular configuration
+├── flux                              # Flux Shell
+│   ├── package.json
+│   ├── public                        # Public assets
+│   ├── src
+│   │   ├── app
+│   │   │   ├── app.component.ts      # UI Entrypoint
+│   │   │   ├── app.config.ts         # Root level providers and imports
+│   │   │   ├── app.routes.ts         # Root level routes
+│   │   │   ├── components/           # Reusable UI components
+│   │   │   ├── feature-toggles/      # Feature toggling logic
+│   │   │   ├── guards/               # Route guards
+│   │   │   ├── pipes/                # Custom pipes
+│   │   │   ├── resolvers/            # Route resolvers
+│   │   │   ├── services/             # Shared services
+│   │   │   └── store/                # State management
+│   │   │       ├── actions/          # Actions to trigger state updates
+│   │   │       ├── effects/          # Side effects and async actions
+│   │   │       ├── facade/           # Facade pattern for state management
+│   │   │       ├── models/           # Data models and interfaces
+│   │   │       ├── reducer/          # Reducers to modify state
+│   │   │       └── selectors/        # Selectors to retrieve state
+│   │   ├── index.html                # Bootstrap
+│   │   ├── main.ts
+│   │   └── styles.scss
+│   ├── tsconfig.app.json
+│   ├── tsconfig.spec.json
+├── flux-utilities                  # Shared library
+│   ├── ng-package.json
+│   ├── package.json
+│   ├── README.md
+│   ├── src
+│   │   ├── lib
+│   │   │   ├── components/         # Reusable UI components
+│   │   │   ├── guards/             # Route guards
+│   │   │   ├── pipes/              # Custom pipes
+│   │   │   ├── resolvers/          # Route resolvers
+│   │   │   ├── services/           # Shared services
+│   │   │   └── store/              # State management
+│   │   └── public-api.ts
+│   ├── tsconfig.lib.json
+│   ├── tsconfig.lib.prod.json
+│   └── tsconfig.spec.json
+├── mock-api
+│   ├── next.config.ts
+│   ├── next-env.d.ts
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── src
+│   │   └── app
+│   │       ├── api
+│   │       │   ├── v1/                  # Mock API version 1
+│   │       │   ├── v2/                  # Mock API version 2
+│   │       ├── graphql                  # GraphQL related files
+│   │       ├── mock/                    # Mock data responses
+│   │       ├── models                   # Models for mock API data
+│   │       ├── store                    # Mock state management for orchestration
+│   │       └── utils                    # Helper utilities for mock API
+│   └── tsconfig.json
+├── package.json
+├── README.md
+├── tsconfig.json
+└── yarn.lock
+```
+
+```
+
+```
