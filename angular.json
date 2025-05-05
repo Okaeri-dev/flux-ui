@@ -32,9 +32,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
-              "flux/src/styles.scss",
-              "flux/src/custom-theme.scss"
+              "flux/src/styles.scss"
             ],
             "scripts": []
           },
@@ -93,9 +91,7 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/magenta-violet.css",
-              "flux/src/styles.scss",
-              "flux/src/custom-theme.scss"
+              "flux/src/styles.scss"
             ],
             "scripts": []
           }
