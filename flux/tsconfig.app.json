@@ -11,8 +11,11 @@
       "@flux-services/*": ["app/services/*"],
       "@flux-components/*": ["app/components/*"],
       "@flux-models/*": ["app/models/*"],
-      "@flux-store/*": ["app/store/*"]
-    }
+      "@flux-store/*": ["app/store/*"],
+      "@flux-resolvers/*": ["app/resolvers/*"],
+      "@flux-pipes/*": ["app/pipes/*"],
+      "@flux-guards/*": ["app/guards/*"]
+    },
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"]
