@@ -32,7 +32,8 @@
               }
             ],
             "styles": [
-              "flux/src/styles.scss"
+              "flux/src/styles.scss",
+              "flux/src/custom-theme.scss"
             ],
             "scripts": []
           },
@@ -91,7 +92,8 @@
               }
             ],
             "styles": [
-              "flux/src/styles.scss"
+              "flux/src/styles.scss",
+              "flux/src/custom-theme.scss"
             ],
             "scripts": []
           }
