@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import featureToggles from './feature-toggles.json';
-import { ApplicationToggles } from './feature-toggles.state';
 import { ApiResponse } from '../store/models/flux-api.models';
+import { ApplicationToggles } from '@flux-models/feature-toggles/feature-togles.models';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureTogglesService {
   getFeatureToggles$(applicationVersion?: string): Observable<ApiResponse<ApplicationToggles>> {
     if (applicationVersion) {
-      return of({ data: featureToggles });
+      return of({ status: 'SUCCESS', data: featureToggles });
     } else {
-      return of({ error: new Error('Failed to fetch toggles') });
+      return of({ status: 'ERROR', error: new Error('Failed to fetch toggles') });
     }
   }
 }

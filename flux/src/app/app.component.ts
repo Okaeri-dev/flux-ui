@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FluxStoreFacade } from './store/facade/flux-store.facade';
+import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 
 @Component({
   selector: 'app-root',

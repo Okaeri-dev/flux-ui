@@ -1,3 +1,3 @@
 export interface ApplicationToggles {
-  darkTheme: boolean;
+  canUseDarkTheme: boolean;
 }

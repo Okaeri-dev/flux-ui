@@ -18,7 +18,7 @@ export class FluxEffects {
       ofType(fetchToggleConfig),
       switchMap(action => this.featureTogglesService.getFeatureToggles$(action.applicationVersion)),
       map(res => {
-        if (res.data) {
+        if (res.data && res.status === 'SUCCESS') {
           return fetchToggleConfigSuccess({ applicationToggles: res.data });
         } else {
           return fetchToggleConfigFailure({ error: res.error ?? new Error() });

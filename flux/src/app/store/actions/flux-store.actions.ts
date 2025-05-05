@@ -1,7 +1,5 @@
+import { ApplicationToggles } from '@flux-models/feature-toggles/feature-togles.models';
 import { createAction, props } from '@ngrx/store';
-import { ApplicationToggles } from '../../feature-toggles/feature-toggles.state';
-
-export const initialPageLoad = createAction('[flux - startup] - Initial page load');
 
 export const fetchToggleConfig = createAction(
   '[flux Toggles] - Load Application Toggles',
