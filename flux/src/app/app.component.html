@@ -1,14 +1,13 @@
 <mat-toolbar>
   <span>Catppuccin Angular</span>
-  <span class="spacer"></span>
-  <button mat-button (click)="toggleTheme()">
-    {{ isDark ? 'Switch to Latte 🌞' : 'Switch to Frappe 🌙' }}
-  </button>
+  <br />
 </mat-toolbar>
-
 <div class="content">
   <mat-card>
     <mat-card-title>Welcome</mat-card-title>
     <mat-card-content>This theme matches Catppuccin 🍵</mat-card-content>
   </mat-card>
 </div>
+<button mat-flat-button (click)="toggleTheme()">
+  {{ isDark ? 'Switch to Latte 🌞' : 'Switch to Frappe 🌙' }}
+</button>

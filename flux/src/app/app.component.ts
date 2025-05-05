@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  imports: [MatCardModule, MatToolbarModule],
+  imports: [MatCardModule, MatToolbarModule, MatButtonModule],
 })
 export class AppComponent {
   isDark = false;
