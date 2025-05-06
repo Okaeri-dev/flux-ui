@@ -3,7 +3,7 @@
 import { mergeConfig } from 'vite';
 import { defineProject } from 'vitest/config';
 import rootConfig from '../vitest.config.mjs';
-import path, { join } from 'node:path';
+import path from 'node:path';
 
 const projectConfig = defineProject({
   test: {

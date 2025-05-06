@@ -19,7 +19,7 @@ export default defineConfig({
     globals: true,
     pool: "threads",
     poolOptions: { minThreads: cpus, maxThreads: cpus },
-    include: ['*/**/*.spec.ts'],
+    include: ['**/*.spec.ts'],
     coverage: { enabled: true, reporter: 'lcov' },
     setupFiles: [join(__dirname, 'tests', 'vitest', 'init-test-environment.ts')],
     server: { deps: { inline: ['ng-mocks'] } },

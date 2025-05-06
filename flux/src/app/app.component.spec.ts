@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { describe, beforeEach, it, expect, vi } from 'vitest';
 import { FluxStoreFacade } from './store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
+import { describe, beforeEach, vi, it, expect } from 'vitest';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

@@ -19,5 +19,5 @@
     }
   },
   "files": ["../tests/vitest/init-test-environment.ts"],
-  "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "src/**/*.ts", "vitest.config.mts"]
+  "include": ["**/*.spec.ts", "**/*.d.ts", "**/*.ts", "vitest.config.mts"]
 }
