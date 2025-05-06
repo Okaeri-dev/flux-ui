@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
 import { Toast } from 'primeng/toast';
@@ -24,5 +24,4 @@ export class AppComponent implements AfterViewInit {
       life: 3000,
     });
   }
-
 }
