@@ -18,12 +18,15 @@
     }
   },
   "files": ["src/main.ts"],
-  "types": ["node"],
+  "types": ["node", "jasmine"],
   "include": [
     "src/**/*.d.ts",
     "src/**/*.ts",
     "node_modules/primeng/**/*.d.ts",
     "node_modules/@primeng/themes/**/*.d.ts",
     "../flux-utilities/**/*"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
   ]
 }

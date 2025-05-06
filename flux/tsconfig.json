@@ -34,7 +34,7 @@
     "useDefineForClassFields": false,
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
-    "types": ["node"]
+    "types": ["node", "jasmine"]
   },
   "include": [
     "src/**/*.d.ts",
@@ -48,5 +48,8 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "src/**/*.spec.ts"
+  ]
 }
