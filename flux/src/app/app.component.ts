@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
+import { FluxUtilitiesService } from 'flux-utilities';
 import { MessageService } from 'primeng/api';
 import { Toast } from 'primeng/toast';
 
@@ -14,6 +15,7 @@ export class AppComponent implements AfterViewInit {
   title = 'flux';
   private readonly fluxStoreFacade: FluxStoreFacade = inject(FluxStoreFacade);
   public readonly messageService: MessageService = inject(MessageService);
+  public readonly fluxUtilitiesService: FluxUtilitiesService = inject(FluxUtilitiesService);
 
   ngAfterViewInit(): void {
     this.fluxStoreFacade.fetchToggleConfig('test');
