@@ -18,7 +18,7 @@
     }
   },
   "files": ["src/main.ts"],
-  "types": ["node", "jasmine"],
+  "types": ["node"],
   "include": [
     "src/**/*.d.ts",
     "src/**/*.ts",
@@ -27,6 +27,9 @@
     "../flux-utilities/**/*"
   ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.vt.spec.ts",
+    "../flux-utilities/**/*.spec.ts"
   ]
 }

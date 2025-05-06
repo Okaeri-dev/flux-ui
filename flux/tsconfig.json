@@ -34,7 +34,7 @@
     "useDefineForClassFields": false,
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
-    "types": ["node", "jasmine"]
+    "types": ["node"]
   },
   "include": [
     "src/**/*.d.ts",
@@ -50,6 +50,9 @@
     "strictTemplates": true
   },
   "exclude": [
-    "src/**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.vt.spec.ts",
+    "../flux-utilities/**/*.spec.ts"
   ]
 }

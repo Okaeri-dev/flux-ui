@@ -5,9 +5,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "../out-tsc/spec",
-    "types": [
-      "jest"
-    ],
+    "types": ["vitest"],
     "paths": {
       "@flux-assets/*": ["assets/*"],
       "@flux-services/*": ["app/services/*"],
@@ -19,11 +17,7 @@
       "@flux-guards/*": ["app/guards/*"],
       "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
     }
-
   },
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-  ]
+  "files": ["../tests/vitest/init-test-environment.ts"],
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "src/**/*.ts", "vitest.config.mts"]
 }
