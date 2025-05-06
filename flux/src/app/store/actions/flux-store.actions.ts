@@ -1,4 +1,4 @@
-import { ApplicationToggles } from '@flux-models/feature-toggles/feature-togles.models';
+import { ApplicationToggles } from '@flux-models/feature-toggles/feature-toggles.models';
 import { createAction, props } from '@ngrx/store';
 
 export const fetchToggleConfig = createAction(

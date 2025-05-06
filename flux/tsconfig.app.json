@@ -14,11 +14,16 @@
       "@flux-resolvers/*": ["app/resolvers/*"],
       "@flux-pipes/*": ["app/pipes/*"],
       "@flux-guards/*": ["app/guards/*"],
-      "primeng/*": ["node_modules/primeng/*"]
-    },
-
-    "types": ["node", "primeng"]
+      "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
+    }
   },
   "files": ["src/main.ts"],
-  "include": ["src/**/*.d.ts"]
+  "types": ["node"],
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "node_modules/primeng/**/*.d.ts",
+    "node_modules/@primeng/themes/**/*.d.ts",
+    "../flux-utilities/**/*"
+  ]
 }

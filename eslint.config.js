@@ -10,7 +10,7 @@ const prettier = require('eslint-plugin-prettier');
 module.exports = tseslint.config(
   {
     files: ['**/*.ts'],
-    ignores: ['mock-api/.next/**'],
+    ignores: ['mock-api/.next/**', 'dist/**/*'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,

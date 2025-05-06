@@ -3,13 +3,27 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "src",
     "outDir": "../out-tsc/spec",
     "types": [
       "jasmine"
-    ]
+    ],
+    "paths": {
+      "@flux-assets/*": ["assets/*"],
+      "@flux-services/*": ["app/services/*"],
+      "@flux-components/*": ["app/components/*"],
+      "@flux-models/*": ["app/models/*"],
+      "@flux-store/*": ["app/store/*"],
+      "@flux-resolvers/*": ["app/resolvers/*"],
+      "@flux-pipes/*": ["app/pipes/*"],
+      "@flux-guards/*": ["app/guards/*"],
+      "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
+    }
+
   },
   "include": [
     "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/**/*.ts",
   ]
 }

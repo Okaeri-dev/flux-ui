@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import featureToggles from './feature-toggles.json';
 import { ApiResponse } from '../store/models/flux-api.models';
-import { ApplicationToggles } from '@flux-models/feature-toggles/feature-togles.models';
+import { ApplicationToggles } from '@flux-models/feature-toggles/feature-toggles.models';
 
 @Injectable({ providedIn: 'root' })
 export class FeatureTogglesService {

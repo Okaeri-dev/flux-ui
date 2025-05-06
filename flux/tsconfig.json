@@ -1,5 +1,6 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "extends": "../tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src",
@@ -12,6 +13,7 @@
       "@flux-resolvers/*": ["app/resolvers/*"],
       "@flux-pipes/*": ["app/pipes/*"],
       "@flux-guards/*": ["app/guards/*"],
+      "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
     },
     "strictNullChecks": true,
     "resolveJsonModule": true,
@@ -32,8 +34,15 @@
     "useDefineForClassFields": false,
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
-    "types": ["node", "primeng"]
+    "types": ["node"]
   },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "node_modules/primeng/**/*.d.ts",
+    "node_modules/@primeng/themes/**/*.d.ts",
+    "../flux-utilities/**/*"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

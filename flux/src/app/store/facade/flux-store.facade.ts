@@ -4,7 +4,7 @@ import { FluxState } from '../models/flux-store.models';
 import { Observable } from 'rxjs';
 import { fetchToggleConfig } from '../actions/flux-store.actions';
 import { getApplicationToggles } from '../selectors/flux-store.selectors';
-import { ApplicationToggles } from '@flux-models/feature-toggles/feature-togles.models';
+import { ApplicationToggles } from '@flux-models/feature-toggles/feature-toggles.models';
 
 @Injectable({ providedIn: 'root' })
 export class FluxStoreFacade {
