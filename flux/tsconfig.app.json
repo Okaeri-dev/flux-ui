@@ -5,7 +5,6 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "../out-tsc/app",
-    "types": [],
     "paths": {
       "@flux-assets/*": ["assets/*"],
       "@flux-services/*": ["app/services/*"],
@@ -14,8 +13,11 @@
       "@flux-store/*": ["app/store/*"],
       "@flux-resolvers/*": ["app/resolvers/*"],
       "@flux-pipes/*": ["app/pipes/*"],
-      "@flux-guards/*": ["app/guards/*"]
+      "@flux-guards/*": ["app/guards/*"],
+      "primeng/*": ["node_modules/primeng/*"]
     },
+
+    "types": ["node", "primeng"]
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"]
