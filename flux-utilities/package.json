@@ -1,6 +1,9 @@
 {
   "name": "flux-utilities",
   "version": "0.0.1",
+  "scripts": {
+    "test": "cd .. && ng test flux-utilities && cd flux"
+  },
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
@@ -10,6 +13,6 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "@types/jest": "^29.5.14"
+    "vitest": "^3.1.3"
   }
 }
