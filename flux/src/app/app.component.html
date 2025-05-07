@@ -1,3 +1,43 @@
 <div class="card flex justify-center">
   <p-toast />
 </div>
+
+<div class="dashboard-container">
+  <!-- Using the component with signals -->
+  <app-metric-card
+    [icon]="salesCard().icon"
+    [iconColor]="salesCard().iconColor"
+    [value]="salesCard().value"
+    [label]="salesCard().label"
+    [percentage]="salesCard().percentage"
+    [isPositive]="salesCard().isPositive"
+    [backgroundColor]="salesCard().backgroundColor">
+  </app-metric-card>
+
+  <app-metric-card
+    [icon]="customersCard().icon"
+    [iconColor]="customersCard().iconColor"
+    [value]="customersCard().value"
+    [label]="customersCard().label"
+    [percentage]="customersCard().percentage"
+    [isPositive]="customersCard().isPositive"
+    [backgroundColor]="customersCard().backgroundColor">
+  </app-metric-card>
+
+  <app-metric-card
+    [icon]="orderCard().icon"
+    [iconColor]="orderCard().iconColor"
+    [value]="orderCard().value"
+    [label]="orderCard().label"
+    [percentage]="orderCard().percentage"
+    [isPositive]="orderCard().isPositive"
+    [backgroundColor]="orderCard().backgroundColor">
+  </app-metric-card>
+
+  <div class="actions">
+    <button class="update-button" (click)="updateSalesData()">Update Sales Data</button>
+    @if (showResetButton()) {
+      <button class="reset-button" (click)="resetSalesData()">Reset Data</button>
+    }
+  </div>
+</div>

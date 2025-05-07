@@ -1,0 +1,21 @@
+<div class="stats-card" [ngStyle]="{ 'background-color': backgroundColor() }">
+  <div class="stats-card-content">
+    <div class="stats-card-icon" [ngStyle]="{ color: iconColor() }">
+      <i [class]="icon()"></i>
+    </div>
+    <div class="stats-card-info">
+      <h2 class="stats-card-value">{{ value() }}</h2>
+      <p class="stats-card-label">{{ label() }}</p>
+    </div>
+    @if (percentage() !== null) {
+      <div
+        class="stats-card-percentage"
+        [ngClass]="{ positive: isPositive(), negative: !isPositive() }">
+        {{ formattedPercentage() }}
+        @if (percentageLabel()) {
+          <span>{{ percentageLabel() }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>
