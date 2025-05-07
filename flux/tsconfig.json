@@ -37,8 +37,8 @@
     "types": ["node"]
   },
   "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
+    "**/*.d.ts",
+    "**/*.ts",
     "node_modules/primeng/**/*.d.ts",
     "node_modules/@primeng/themes/**/*.d.ts",
     "../flux-utilities/**/*"
@@ -48,5 +48,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
 }
