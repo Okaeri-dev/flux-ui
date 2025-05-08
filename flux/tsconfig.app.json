@@ -24,6 +24,7 @@
     "**/*.ts",
     "node_modules/primeng/**/*.d.ts",
     "node_modules/@primeng/themes/**/*.d.ts",
+    "node_modules/vitest/**/*.d.ts",
     "../flux-utilities/**/*"
-  ],
+  ]
 }
