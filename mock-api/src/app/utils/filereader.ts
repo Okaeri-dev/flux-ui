@@ -11,7 +11,7 @@ export const filereader = async (
     const v1Path: string = `${operation}/${params.join('/')}/${mockUsername}`
     const v2Path: string = `${params.join('/')}/${mockUsername}`
     const path = version === 'v1' ? v1Path : v2Path
-    const file: JsonResponse = await import(`../mock/${version}/${path}.json`)
+    const file: JsonResponse = (await import(`../mock/${version}/${path}.json`)).default
     if (Object.keys(file).includes(orchestratedKey)) {
       switch (true) {
         case !Object.keys(orchestrationState).includes(path):

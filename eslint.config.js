@@ -10,7 +10,7 @@ const prettier = require('eslint-plugin-prettier');
 module.exports = tseslint.config(
   {
     files: ['**/*.ts'],
-    ignores: ['mock-api/.next/**', 'dist/**/*'],
+    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
@@ -22,11 +22,11 @@ module.exports = tseslint.config(
     rules: {
       '@angular-eslint/directive-selector': [
         'error',
-        { type: 'attribute', prefix: 'app|lib', style: 'camelCase' },
+        { type: 'attribute', prefix: 'flux|flux-utilities', style: 'camelCase' },
       ],
       '@angular-eslint/component-selector': [
         'error',
-        { type: 'element', prefix: 'app|lib', style: 'kebab-case' },
+        { type: 'element', prefix: 'app|flux|flux-utilities', style: 'kebab-case' },
       ],
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -35,6 +35,7 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/consistent-indexed-object-style': 'off',
       'prettier/prettier': 'warn',
+      'no-console': 'warn',
     },
   },
   {

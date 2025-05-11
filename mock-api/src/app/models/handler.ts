@@ -16,7 +16,6 @@ export interface MockContext {
 
 export interface JsonResponse {
   data: unknown
-  default: unknown
   orchestrated?: JsonResponse[]
 }
 

@@ -1,0 +1,33 @@
+{
+  "status": "SUCCESS",
+  "data": [
+    {
+      "icon": "pi pi-shopping-bag",
+      "iconColor": "#E91E63",
+      "value": "$24,780",
+      "label": "Total Sales",
+      "percentage": 0.125,
+      "isPositive": true,
+      "backgroundColor": "#F9F9F9"
+    },
+    {
+      "icon": "pi pi-users",
+      "iconColor": "#3F51B5",
+      "value": "1,482",
+      "label": "New Customers",
+      "percentage": 0.082,
+      "isPositive": true,
+      "backgroundColor": "#F9F9F9"
+    },
+    {
+      "icon": "pi pi-chart-line",
+      "iconColor": "#FF9800",
+      "value": "$8,549",
+      "label": "Average Order",
+      "percentage": 0.031,
+      "isPositive": false,
+      "backgroundColor": "#F9F9F9"
+    }
+  ],
+  "error": null
+}

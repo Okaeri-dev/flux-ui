@@ -1,0 +1,25 @@
+@if (metricCard) {
+  <div class="stats-card" [ngStyle]="{ background: metricCard.backgroundColor }">
+    <div
+      tabindex="0"
+      class="stats-card-content"
+      (click)="metricCardClicked.emit(metricCard)"
+      (keydown.control.enter)="metricCardClicked.emit(metricCard)">
+      <div class="stats-card-icon">
+        <i [class]="metricCard.icon" [ngStyle]="{ color: metricCard.iconColor }"></i>
+      </div>
+      <div class="stats-card-info">
+        <h2 class="stats-card-value">{{ metricCard.value }}</h2>
+        <p class="stats-card-label">{{ metricCard.label }}</p>
+      </div>
+      @if (!!metricCard.percentage) {
+        <div
+          class="stats-card-percentage"
+          [ngClass]="{ positive: metricCard.isPositive, negative: !metricCard.isPositive }">
+          {{ metricCard.percentage | percent: '2.1-2' }}
+          <span>{{ metricCard.percentageLabel }}</span>
+        </div>
+      }
+    </div>
+  </div>
+}

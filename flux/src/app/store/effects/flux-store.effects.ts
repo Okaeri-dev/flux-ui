@@ -6,7 +6,7 @@ import {
   fetchToggleConfigSuccess,
 } from '../actions/flux-store.actions';
 import { map, switchMap } from 'rxjs';
-import { FeatureTogglesService } from '../../feature-toggles/feature-toggles.service';
+import { FeatureTogglesService } from '@flux-services/feature-toggles/feature-toggles.service';
 
 @Injectable()
 export class FluxEffects {

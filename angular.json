@@ -8,7 +8,7 @@
       "schematics": { "@schematics/angular:component": { "style": "scss" } },
       "root": "flux",
       "sourceRoot": "flux/src",
-      "prefix": "app",
+      "prefix": "flux",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -20,7 +20,11 @@
             "tsConfig": "flux/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [{ "glob": "**/*", "input": "flux/public" }],
-            "styles": ["flux/src/styles.scss"],
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css",
+              "flux/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -31,7 +35,17 @@
               ],
               "outputHashing": "all"
             },
-            "development": { "optimization": false, "extractLicenses": false, "sourceMap": true }
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "flux/src/environments/environment.ts",
+                  "with": "flux/src/environments/environment.development.ts"
+                }
+              ]
+            }
           },
           "defaultConfiguration": "production"
         },
@@ -54,7 +68,7 @@
       "projectType": "library",
       "root": "flux-utilities",
       "sourceRoot": "flux-utilities/src",
-      "prefix": "lib",
+      "prefix": "flux-utilities",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

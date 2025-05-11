@@ -2,6 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FluxStoreFacade } from './store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
+import { LandingDashboardComponent } from '@flux-components/landing-dashboard/landing-dashboard.component';
+import { MockComponent } from 'ng-mocks';
+import { Toast } from 'primeng/toast';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,9 +12,14 @@ describe('AppComponent', () => {
       imports: [AppComponent],
       providers: [
         { provide: FluxStoreFacade, useValue: { fetchToggleConfig: vi.fn() } },
-        { provde: MessageService, useValue: { add: vi.fn() } },
+        { provide: MessageService, useValue: { add: vi.fn() } },
       ],
-    }).compileComponents();
+    })
+      .overrideComponent(AppComponent, {
+        remove: { imports: [LandingDashboardComponent, Toast] },
+        add: { imports: [MockComponent(LandingDashboardComponent), MockComponent(Toast)] },
+      })
+      .compileComponents();
   });
 
   it('should create the app', () => {
