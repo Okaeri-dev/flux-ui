@@ -15,8 +15,10 @@ export interface MockContext {
 }
 
 export interface JsonResponse {
-  data: unknown
-  default: unknown
+  status: 'SUCCESS' | 'ERROR'
+  data: unknown,
+  error: Error | null,
+  mockDelay: number
   orchestrated?: JsonResponse[]
 }
 

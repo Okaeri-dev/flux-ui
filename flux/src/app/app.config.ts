@@ -9,6 +9,8 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { FluxEffects } from './store/effects/flux-store.effects';
 import { rootReducer } from './store/reducer/flux-root-store.reducers';
+import { provideHttpClient } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +20,8 @@ export const appConfig: ApplicationConfig = {
     provideEffects([FluxEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: isDevMode() }),
     provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: Aura } }),
+    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.dark' } } }),
+    provideHttpClient(),
+    MessageService,
   ],
 };

@@ -15,3 +15,8 @@ export const fetchToggleConfigFailure = createAction(
   '[Flux Toggles] - Load toggless failure',
   props<{ error: Error }>(),
 );
+
+export const pageLevelLoader = createAction(
+  '[loader] - Set page level loader',
+  props<{ loading: boolean }>(),
+);

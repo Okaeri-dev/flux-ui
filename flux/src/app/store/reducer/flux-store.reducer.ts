@@ -1,10 +1,14 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { FluxState } from '../models/flux-store.models';
-import { fetchToggleConfigSuccess } from '../actions/flux-store.actions';
+import { fetchToggleConfigSuccess, pageLevelLoader } from '../actions/flux-store.actions';
 
 export const FLUX_STORE_KEY = 'flux';
 
-export const initialFluxStore: FluxState = { initialLoad: false, applicationToggles: null };
+export const initialFluxStore: FluxState = {
+  initialLoad: false,
+  applicationToggles: null,
+  loading: false,
+};
 
 const reducer = createReducer(
   initialFluxStore,
@@ -16,6 +20,7 @@ const reducer = createReducer(
       initialLoad: true,
     }),
   ),
+  on(pageLevelLoader, (state, { loading }): FluxState => ({ ...state, loading })),
 );
 
 export const fluxReducer = (state: FluxState | undefined, action: Action) =>
