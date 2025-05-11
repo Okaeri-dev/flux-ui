@@ -7,16 +7,12 @@ export async function GET(request: Request, context: V1ApiContext) {
   const mockUsername: string = request.headers.get('from') ?? defaultMockUsername
   try {
     const file = await filereader(params, mockUsername, RequestOperation.GET, 'v1')
-    return NextResponse.json({
-      mockUsername,
-      data: file.data,
-      mockMatch: true,
-    })
+    return NextResponse.json({status: file.status, data: file.data, error: file.error})
   } catch {
     try {
       // mockUsername was provided but it did not match a mock
       const file = await filereader(params, defaultMockUsername, RequestOperation.GET, 'v1')
-      return NextResponse.json(file)
+      return NextResponse.json({status: file.status, data: file.data, error: file.error})
     } catch (error) {
       // MockUsername was provided or not, but operation has not been mocked
       return NextResponse.json({
@@ -33,13 +29,12 @@ export async function POST(request: Request, context: V1ApiContext) {
   const mockUsername: string = request.headers.get('from') ?? defaultMockUsername
   try {
     const file = await filereader(params, mockUsername, RequestOperation.POST, 'v1')
-    return NextResponse.json(file)
+    return NextResponse.json({status: file.status, data: file.data, error: file.error})
   } catch {
     try {
       // mockUsername was provided but it did not match a mock
       const file = await filereader(params, defaultMockUsername, RequestOperation.POST, 'v1')
-      return NextResponse.json(file)
-    } catch (error) {
+      return NextResponse.json({status: file.status, data: file.data, error: file.error})    } catch (error) {
       // MockUsername was provided or not, but operation has not been mocked
       return NextResponse.json({
         status: 'ERROR',

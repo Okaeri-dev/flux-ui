@@ -1,7 +1,11 @@
-<div *ngIf="{ metricCards: metricCards$ | async } as vars" class="metric--card--container">
-  @for (card of vars.metricCards; track card.label) {
-    <flux-utilities-metric-card
-      [metricCard]="card"
-      (metricCardClicked)="handleMetricCardClick($event)"></flux-utilities-metric-card>
+<div
+  class="metric--card--container"
+  *ngIf="{ cards: metricCards$ | async, loading: loading$ | async } as vars">
+  @for (card of vars.cards; track card.label) {
+    @if (!vars.loading) {
+      <flux-utilities-metric-card
+        [metricCard]="card"
+        (metricCardClicked)="handleMetricCardClick($event)"></flux-utilities-metric-card>
+    }
   }
 </div>

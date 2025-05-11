@@ -23,8 +23,13 @@ export const filereader = async (
           return file.orchestrated[orchestrationState[path]]
       }
     }
+    await wait(file.mockDelay)
     return file
   } catch {
     return null
   }
+}
+
+function wait(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -8,3 +8,8 @@ export const getFluxState: MemoizedSelector<FluxState, FluxState> =
 
 export const getApplicationToggles: MemoizedSelector<FluxState, ApplicationToggles | null> =
   createSelector(getFluxState, (state: FluxState) => state.applicationToggles);
+
+export const getLoading: MemoizedSelector<FluxState, boolean> = createSelector(
+  getFluxState,
+  (state: FluxState) => state.loading,
+);

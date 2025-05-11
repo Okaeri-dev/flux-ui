@@ -13,5 +13,5 @@ import { MetricCard } from '../../models';
 })
 export class MetricCardComponent {
   @Input({ required: true }) metricCard: MetricCard | undefined;
-  @Output() readonly metricCardClicked: EventEmitter<MetricCard> = new EventEmitter<MetricCard>()
+  @Output() readonly metricCardClicked: EventEmitter<MetricCard> = new EventEmitter<MetricCard>();
 }

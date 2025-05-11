@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { FluxApiResponse, fluxApiRoutes } from '@flux-models/flux-api.models';
+import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 import { MetricCard } from 'flux-utilities';
 import { MessageService } from 'primeng/api';
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, finalize, map, Observable, of, share } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DashboardApiService {
   private readonly httpClient = inject(HttpClient);
-  public readonly messageService: MessageService = inject(MessageService);
+  private readonly messageService: MessageService = inject(MessageService);
+  private readonly fluxStoreFacade: FluxStoreFacade = inject(FluxStoreFacade);
 
   getDashboardMetrics(user?: string): Observable<MetricCard[]> {
+    this.fluxStoreFacade.setPageLevelLoader(true);
     return this.httpClient
       .post<FluxApiResponse<MetricCard[]>>(fluxApiRoutes.dashboardMetrics, { user })
       .pipe(
@@ -29,6 +32,8 @@ export class DashboardApiService {
           });
           return of([]);
         }),
+        finalize(() => this.fluxStoreFacade.setPageLevelLoader(false)),
+        share(),
       );
   }
 }

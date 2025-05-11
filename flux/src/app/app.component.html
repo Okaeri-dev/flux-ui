@@ -1,2 +1,6 @@
-<p-toast position="bottom-right" />
 <flux-landing-dashboard></flux-landing-dashboard>
+<ng-container *ngIf="loading$ | async as loading">
+  <p-toast position="bottom-right" />
+  <p-progress-spinner *ngIf="loading" ariaLabel="loading" class="absolute--center" />
+  <p-button *ngIf="!loading" (onClick)="toggleDarkMode()">Toggle Theme</p-button>
+</ng-container>
