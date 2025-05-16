@@ -2,6 +2,7 @@ import { ApplicationToggles } from '@flux-models/feature-toggles/feature-toggles
 
 export interface FluxState {
   initialLoad: boolean;
+  isAuth: boolean;
   applicationToggles: ApplicationToggles | null;
   loading: boolean;
 }
