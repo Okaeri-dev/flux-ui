@@ -3,9 +3,8 @@ import { AfterViewInit, Component, inject } from '@angular/core';
 import { LandingDashboardComponent } from '@flux-components/landing-dashboard/landing-dashboard.component';
 import { NavigationBarUnauthComponent } from '@flux-components/navigation-bar-unauth/navigation-bar-unauth.component';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
+import { ProgressSpinner, Toast } from 'flux-primeng-components';
 import { MessageService } from 'primeng/api';
-import { ProgressSpinner } from 'primeng/progressspinner';
-import { Toast } from 'primeng/toast';
 import { Observable } from 'rxjs';
 
 @Component({

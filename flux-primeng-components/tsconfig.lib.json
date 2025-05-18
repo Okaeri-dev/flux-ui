@@ -6,10 +6,9 @@
     "outDir": "../out-tsc/lib",
     "declaration": true,
     "declarationMap": true,
-    "types": [],
+    "types": []
   },
   "exclude": [
-    "**/*.spec.ts",
-    "**/flux-primeng-components/*"
+    "**/*.spec.ts"
   ]
 }

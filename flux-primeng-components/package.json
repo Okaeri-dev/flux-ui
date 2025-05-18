@@ -1,8 +1,8 @@
 {
-  "name": "flux-utilities",
+  "name": "flux-primeng-components",
   "version": "0.0.1",
   "scripts": {
-    "test": "cd .. && ng test flux-utilities && cd flux-utilities",
+    "test": "cd .. && ng test flux-primeng-components && cd flux-primeng-components",
     "build": "ng build"
   },
   "peerDependencies": {
