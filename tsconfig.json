@@ -6,7 +6,14 @@
     "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "strict": true,
-    "paths": { "flux-utilities": ["flux-utilities/src/public-api.ts"] },
+    "paths": {
+      "flux-primeng-components": [
+        "flux-primeng-components/src/public-api.ts"
+      ],
+      "flux-utilities": [
+        "flux-utilities/src/public-api.ts"
+      ]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

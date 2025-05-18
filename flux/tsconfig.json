@@ -13,7 +13,8 @@
       "@flux-resolvers/*": ["app/resolvers/*"],
       "@flux-pipes/*": ["app/pipes/*"],
       "@flux-guards/*": ["app/guards/*"],
-      "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
+      "flux-utilities": ["../../flux-utilities/src/public-api.ts"],
+      "flux-primeng-components": ["../../flux-primeng-components/src/public-api.ts"]
     },
     "strictNullChecks": true,
     "resolveJsonModule": true,
@@ -39,10 +40,10 @@
   "include": [
     "**/*.d.ts",
     "**/*.ts",
-    "node_modules/primeng/**/*.d.ts",
     "node_modules/@primeng/themes/**/*.d.ts",
     "node_modules/vitest/**/*.d.ts",
-    "../flux-utilities/**/*"
+    "../flux-utilities/**/*",
+    "../flux-primeng-components/**/*"
   ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

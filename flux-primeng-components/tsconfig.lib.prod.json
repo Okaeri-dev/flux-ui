@@ -5,13 +5,6 @@
   "compilerOptions": {
     "declarationMap": false
   },
-  "paths": {
-    "flux-primeng-components": ["../../flux-primeng-components/src/public-api.ts"]
-  },
-  "include": [
-    "**/*.d.ts",
-    "../flux-primeng-components/**/*"
-  ],
   "angularCompilerOptions": {
     "compilationMode": "partial"
   }
