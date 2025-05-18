@@ -89,7 +89,7 @@
       "projectType": "library",
       "root": "flux-primeng-components",
       "sourceRoot": "flux-primeng-components/src",
-      "prefix": "lib",
+      "prefix": "flux-primeng",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

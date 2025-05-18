@@ -1,9 +1,4 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class FluxPrimengService {
-
-  constructor() { }
-}
+@Injectable({ providedIn: 'root' })
+export class FluxPrimengService {}

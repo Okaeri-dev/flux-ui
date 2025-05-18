@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-flux-primeng',
+  selector: 'flux-primeng',
   imports: [],
-  template: `
-    <p>
-      flux-primeng works!
-    </p>
-  `,
-  styles: ``
+  template: ` <p>flux-primeng works!</p> `,
+  styles: ``,
 })
-export class FluxPrimengComponent {
-
-}
+export class FluxPrimengComponent {}

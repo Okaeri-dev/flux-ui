@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "sanity": "yarn test && yarn build flux && yarn build flux-utilities && yarn build flux-primeng-components",
+    "sanity": "yarn pretty && yarn test && yarn build flux && yarn build flux-utilities && yarn build flux-primeng-components",
     "prepare": "husky"
   },
   "private": true,
