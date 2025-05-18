@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { LandingDashboardComponent } from '@flux-components/landing-dashboard/landing-dashboard.component';
-import { NavigationBarComponent } from '@flux-components/navigation-bar/navigation-bar.component';
+import { NavigationBarUnauthComponent } from '@flux-components/navigation-bar-unauth/navigation-bar-unauth.component';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
 import { Button } from 'primeng/button';
@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
     LandingDashboardComponent,
     Button,
     ProgressSpinner,
-    NavigationBarComponent,
+    NavigationBarUnauthComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
