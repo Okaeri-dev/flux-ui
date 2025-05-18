@@ -1,13 +1,15 @@
+
 :host {
   .navigation--wrapper {
     display: flex;
-    justify-content: center;
-    margin-bottom: 2rem
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 
   .navigation--bar {
     display: block;
-    width: 80%;
+    width: 60%;
     ::ng-deep {
       .p-menubar {
         border-radius: 1rem;
@@ -19,6 +21,7 @@
   p-button {
     ::ng-deep {
       button {
+        height: 100%;
         border-radius: 1rem;
         border: 1px solid white
       }
