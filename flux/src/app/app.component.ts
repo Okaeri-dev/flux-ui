@@ -4,7 +4,6 @@ import { LandingDashboardComponent } from '@flux-components/landing-dashboard/la
 import { NavigationBarUnauthComponent } from '@flux-components/navigation-bar-unauth/navigation-bar-unauth.component';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
-import { Button } from 'primeng/button';
 import { ProgressSpinner } from 'primeng/progressspinner';
 import { Toast } from 'primeng/toast';
 import { Observable } from 'rxjs';
@@ -15,7 +14,6 @@ import { Observable } from 'rxjs';
     Toast,
     CommonModule,
     LandingDashboardComponent,
-    Button,
     ProgressSpinner,
     NavigationBarUnauthComponent,
   ],
