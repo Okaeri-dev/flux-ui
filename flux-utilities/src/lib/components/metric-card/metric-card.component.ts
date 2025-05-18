@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MetricCard } from '../../models';
-import { CardModule, TagModule } from 'flux-primeng-components';
+import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'flux-utilities-metric-card',

@@ -51,4 +51,29 @@ module.exports = tseslint.config(
     plugins: { jsonc },
     rules: { 'jsonc/indent': ['error', 2], 'jsonc/no-comments': 'off' },
   },
+  {
+    files: ['flux-utilities/**/*.ts'],
+    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts'],
+    extends: [
+      eslint.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...tseslint.configs.stylistic,
+      ...angular.configs.tsRecommended,
+    ],
+    plugins: { prettier },
+    processor: angular.processInlineTemplates,
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'flux-primeng-components',
+              message: 'Do not import from flux-primeng-components in flux-utilities.',
+            },
+          ],
+        },
+      ],
+    },
+  },
 );

@@ -2,7 +2,8 @@
   "name": "flux-utilities",
   "version": "0.0.1",
   "scripts": {
-    "test": "cd .. && ng test flux-utilities && cd flux"
+    "test": "cd .. && ng test flux-utilities && cd flux-utilities",
+    "build": "ng build"
   },
   "peerDependencies": {
     "@angular/common": "^19.2.0",

@@ -6,17 +6,10 @@
     "outDir": "../out-tsc/lib",
     "declaration": true,
     "declarationMap": true,
-    "inlineSources": true,
     "types": [],
-    "paths": {
-      "flux-primeng-components": ["../../flux-primeng-components/src/public-api.ts"]
-    }
   },
-  "include": [
-    "**/*.d.ts",
-    "../flux-primeng-components/**/*",
-  ],
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/flux-primeng-components/*"
   ]
 }

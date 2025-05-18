@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Button, Menubar } from 'flux-primeng-components';
 import { MenuItem } from 'primeng/api';
+import { Button } from 'primeng/button';
+import { Menubar } from 'primeng/menubar';
 
 @Component({
   selector: 'flux-utilities-global-navigation',
