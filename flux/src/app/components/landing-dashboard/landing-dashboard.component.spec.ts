@@ -13,9 +13,12 @@ describe('LandingDashboardComponent', () => {
   let fixture: ComponentFixture<LandingDashboardComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [LandingDashboardComponent],
-    }).compileComponents();
+    await TestBed.configureTestingModule({ imports: [LandingDashboardComponent] })
+      .overrideComponent(LandingDashboardComponent, {
+        remove: { imports: [MetricCardComponent] },
+        add: { imports: [MockComponent(MetricCardComponent)] },
+      })
+      .compileComponents();
 
     fixture = TestBed.configureTestingModule({
       providers: [

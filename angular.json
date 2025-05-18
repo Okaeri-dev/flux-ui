@@ -101,11 +101,8 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "flux-primeng-components/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
-          }
+          "builder": "@analogjs/vitest-angular:test",
+          "options": { "tsConfig": "flux-primeng-components/tsconfig.spec.json" }
         }
       }
     }
