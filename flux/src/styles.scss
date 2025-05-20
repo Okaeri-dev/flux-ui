@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'jetbrains';
+  src: url('../public/fonts/JetBrainsMono/JetBrainsMonoNerdFont-SemiBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'jetbrains';
+}
 :host {
   .metric--card--container {
     display: flex;
     width: 60%;
-    gap: 0.5rem
+    gap: 0.5rem;
   }
   .absolute--center {
     position: absolute;
