@@ -4,13 +4,13 @@ import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { FluxEffects } from './store/effects/flux-store.effects';
 import { rootReducer } from './store/reducer/flux-root-store.reducers';
 import { provideHttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
+import CatppuccinFrappePreset from './themes/catppuccin-frappe';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,7 +20,9 @@ export const appConfig: ApplicationConfig = {
     provideEffects([FluxEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: isDevMode() }),
     provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.dark' } } }),
+    providePrimeNG({
+      theme: { preset: CatppuccinFrappePreset, options: { darkModeSelector: '.dark' } },
+    }),
     provideHttpClient(),
     MessageService,
   ],

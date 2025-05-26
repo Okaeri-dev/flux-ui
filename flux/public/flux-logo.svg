@@ -1,0 +1,20 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="320" height="144">
+  <style>
+    .text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 640px;
+      fill: #8caaee; /* Frappe Blue */
+    }
+    .accent {
+      fill: #ca9ee6; /* Frappe Mauve */
+    }
+  </style>
+
+  <!-- FLUX -->
+  <text x="0" y="600" class="text">
+    F<tspan class="accent">L</tspan>UX
+  </text>
+</svg>
+
