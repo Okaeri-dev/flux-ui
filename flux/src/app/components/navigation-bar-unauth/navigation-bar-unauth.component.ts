@@ -15,5 +15,5 @@ export class NavigationBarUnauthComponent {
     { label: 'Features', icon: 'pi pi-star' },
     { label: 'Contact', icon: 'pi pi-envelope' },
   ];
-  icon: string = 'assets/primeng.svg';
+  icon: string = 'assets/flux-logo.svg';
 }

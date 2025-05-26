@@ -1,3 +1,5 @@
+@use 'tailwindcss';
+
 @font-face {
   font-family: 'jetbrains';
   src: url('../public/fonts/JetBrainsMono/JetBrainsMonoNerdFont-SemiBold.ttf');
@@ -8,6 +10,14 @@
 * {
   font-family: 'jetbrains';
 }
+
+:host-context(.dark) {
+  --p-button-primary-background: transparent;
+  --p-button-primary-hover-background: #ca9ee6;
+  --p-button-primary-color: #c6d0f5;
+  --p-button-primary-hover-color: #303446;
+}
+
 :host {
   .metric--card--container {
     display: flex;
