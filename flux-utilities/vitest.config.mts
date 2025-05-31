@@ -9,6 +9,7 @@ const projectConfig = defineProject({
   test: {
     name: 'flux-utilities',
     dir: 'flux-utilities',
+    include: ['./**/*.spec.ts'],
     alias: {
       'flux-primeng-components': path.resolve(
         __dirname,

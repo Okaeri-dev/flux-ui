@@ -9,6 +9,7 @@ const projectConfig = defineProject({
   test: {
     name: 'flux',
     dir: 'flux',
+    include: ['./**/*.spec.ts'],
     alias: {
       '@flux-assets': path.resolve(__dirname, 'assets'),
       '@flux-services': path.resolve(__dirname, 'src/app/services'),
