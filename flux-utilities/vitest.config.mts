@@ -8,7 +8,7 @@ import path from 'node:path';
 const projectConfig = defineProject({
   test: {
     name: 'flux-utilities',
-    dir: 'flux-utilities',
+    include: ['./**/*.spec.ts'],
     alias: {
       'flux-primeng-components': path.resolve(
         __dirname,
@@ -16,6 +16,7 @@ const projectConfig = defineProject({
       ),
     },
   },
+  root: __dirname,
 });
 
 export default mergeConfig(rootConfig, projectConfig);

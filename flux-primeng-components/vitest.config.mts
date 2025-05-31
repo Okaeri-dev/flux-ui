@@ -5,7 +5,8 @@ import { defineProject } from 'vitest/config';
 import rootConfig from '../vitest.config.mjs';
 
 const projectConfig = defineProject({
-  test: { name: 'flux-primeng-components', dir: 'flux-primeng-components' },
+  test: { name: 'flux-primeng-components', include: ['./**/*.spec.ts'] },
+  root: __dirname,
 });
 
 export default mergeConfig(rootConfig, projectConfig);
