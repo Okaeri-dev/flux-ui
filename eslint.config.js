@@ -10,7 +10,7 @@ const prettier = require('eslint-plugin-prettier');
 module.exports = tseslint.config(
   {
     files: ['**/*.ts'],
-    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts', 'coverage/**/*'],
+    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts', '**/coverage/**/*'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
@@ -40,21 +40,21 @@ module.exports = tseslint.config(
   },
   {
     files: ['**/*.html'],
-    ignores: ['mock-api/.next/**', '**/index.html', 'coverage/**/*'],
+    ignores: ['mock-api/.next/**', '**/index.html', '**/coverage/**/*'],
     extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     plugins: { prettier },
     rules: { 'prettier/prettier': 'warn' },
   },
   {
     files: ['**/*.json'],
-    ignores: ['coverage/**/'],
+    ignores: ['**/coverage/**/'],
     languageOptions: { parser: jsoncParser },
     plugins: { jsonc },
     rules: { 'jsonc/indent': ['error', 2], 'jsonc/no-comments': 'off' },
   },
   {
     files: ['flux-utilities/**/*.ts'],
-    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts', 'coverage/**/*'],
+    ignores: ['mock-api/.next/**', 'dist/**/*', '**/main.ts', '**/coverage/**/*'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
