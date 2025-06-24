@@ -19,7 +19,7 @@ export class LandingDashboardComponent {
   loading$: Observable<boolean> = this.fluxStoreFacade.getLoading$;
 
   handleMetricCardClick(event: MetricCard) {
-    // TODO
+    // TODO: implement click event
     return event;
   }
 }
