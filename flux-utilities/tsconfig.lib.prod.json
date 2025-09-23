@@ -6,6 +6,7 @@
     "declarationMap": false
   },
   "include": [
+    "src/**/*.ts",
     "node_modules/@primeng/themes/**/*.d.ts"
   ],
   "angularCompilerOptions": {
