@@ -67,13 +67,6 @@ module.exports = tseslint.config(
       'no-restricted-imports': [
         'error',
         {
-          paths: [
-            {
-              name: 'flux-primeng-components',
-              message: 'Do not import from flux-primeng-components in flux-utilities.',
-            },
-          ],
-        },
       ],
     },
   },

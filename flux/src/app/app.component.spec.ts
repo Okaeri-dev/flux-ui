@@ -4,7 +4,6 @@ import { FluxStoreFacade } from './store/facade/flux-store.facade';
 import { MessageService } from 'primeng/api';
 import { LandingDashboardComponent } from '@flux-components/landing-dashboard/landing-dashboard.component';
 import { MockComponent } from 'ng-mocks';
-import { Toast } from 'flux-primeng-components';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,8 +14,8 @@ describe('AppComponent', () => {
       ],
     })
       .overrideComponent(AppComponent, {
-        remove: { imports: [LandingDashboardComponent, Toast] },
-        add: { imports: [MockComponent(LandingDashboardComponent), MockComponent(Toast)] },
+        remove: { imports: [LandingDashboardComponent] },
+        add: { imports: [MockComponent(LandingDashboardComponent)] },
       })
       .compileComponents();
   });

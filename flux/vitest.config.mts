@@ -19,10 +19,6 @@ const projectConfig = defineProject({
       '@flux-pipes': path.resolve(__dirname, 'src/app/pipes'),
       '@flux-guards': path.resolve(__dirname, 'src/app/guards'),
       'flux-utilities': path.resolve(__dirname, '../flux-utilities/src/public-api.ts'),
-      'flux-primeng-components': path.resolve(
-        __dirname,
-        '../flux-primeng-components/src/public-api.ts',
-      ),
     },
   },
   root: __dirname,

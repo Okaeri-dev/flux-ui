@@ -5,7 +5,10 @@
   "compilerOptions": {
     "declarationMap": false
   },
+  "include": [
+    "node_modules/@primeng/themes/**/*.d.ts"
+  ],
   "angularCompilerOptions": {
-    "compilationMode": "partial",
+    "compilationMode": "partial"
   }
 }
