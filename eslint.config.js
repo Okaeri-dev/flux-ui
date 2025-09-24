@@ -63,11 +63,5 @@ module.exports = tseslint.config(
     ],
     plugins: { prettier },
     processor: angular.processInlineTemplates,
-    rules: {
-      'no-restricted-imports': [
-        'error',
-        {
-      ],
-    },
   },
 );
