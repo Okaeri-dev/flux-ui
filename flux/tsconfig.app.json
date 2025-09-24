@@ -15,9 +15,16 @@
       "@flux-pipes/*": ["app/pipes/*"],
       "@flux-guards/*": ["app/guards/*"],
       "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
-    }
+    },
+    "types": [
+      "node"
+    ]
   },
-  "files": ["src/main.ts"],
+  "files": [
+    "src/main.ts",
+    "src/main.server.ts",
+    "src/server.ts"
+  ],
   "types": ["node"],
   "include": [
     "**/*.d.ts",
