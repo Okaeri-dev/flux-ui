@@ -27,13 +27,7 @@ const commonEngine = new CommonEngine();
 /**
  * Serve static files from /browser
  */
-app.get(
-  '**',
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: 'index.html'
-  }),
-);
+app.get('**', express.static(browserDistFolder, { maxAge: '1y', index: 'index.html' }));
 
 /**
  * Handle all other requests by rendering the Angular application.
@@ -49,8 +43,8 @@ app.get('**', (req, res, next) => {
       publicPath: browserDistFolder,
       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
     })
-    .then((html) => res.send(html))
-    .catch((err) => next(err));
+    .then(html => res.send(html))
+    .catch(err => next(err));
 });
 
 /**
