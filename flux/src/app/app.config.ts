@@ -25,6 +25,7 @@ export const appConfig: ApplicationConfig = {
       theme: { preset: CatppuccinFrappePreset, options: { darkModeSelector: '.dark' } },
     }),
     provideHttpClient(),
-    MessageService, provideClientHydration(withEventReplay()),
+    MessageService,
+    provideClientHydration(withEventReplay()),
   ],
 };
