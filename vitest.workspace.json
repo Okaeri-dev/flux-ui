@@ -1,5 +1,4 @@
 [
   "./flux/vitest.config.mts",
-  "./flux-utilities/vitest.config.mts",
-  "./flux-primeng-components/vitest.config.mts"
+  "./flux-utilities/vitest.config.mts"
 ]

@@ -10,6 +10,5 @@
   },
   "exclude": [
     "**/*.spec.ts",
-    "**/flux-primeng-components/*"
   ]
 }

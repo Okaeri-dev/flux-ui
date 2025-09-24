@@ -4,5 +4,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": { "outDir": "../out-tsc/spec", "types": ["vitest"]},
   "files": ["../tests/vitest/init-test-environment.ts"],
-  "include": ["**/*.spec.ts", "**/*.d.ts", "vitest.config.mts"]
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "vitest.config.mts",
+    "node_modules/@primeng/themes/**/*.d.ts"
+  ]
 }

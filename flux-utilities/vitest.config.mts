@@ -9,12 +9,6 @@ const projectConfig = defineProject({
   test: {
     name: 'flux-utilities',
     include: ['./**/*.spec.ts'],
-    alias: {
-      'flux-primeng-components': path.resolve(
-        __dirname,
-        '../flux-primeng-components/src/public-api.ts',
-      ),
-    },
   },
   root: __dirname,
 });

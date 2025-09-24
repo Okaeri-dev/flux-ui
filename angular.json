@@ -84,27 +84,6 @@
           "options": { "tsConfig": "flux-utilities/tsconfig.spec.json" }
         }
       }
-    },
-    "flux-primeng-components": {
-      "projectType": "library",
-      "root": "flux-primeng-components",
-      "sourceRoot": "flux-primeng-components/src",
-      "prefix": "flux-primeng",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": { "project": "flux-primeng-components/ng-package.json" },
-          "configurations": {
-            "production": { "tsConfig": "flux-primeng-components/tsconfig.lib.prod.json" },
-            "development": { "tsConfig": "flux-primeng-components/tsconfig.lib.json" }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@analogjs/vitest-angular:test",
-          "options": { "tsConfig": "flux-primeng-components/tsconfig.spec.json" }
-        }
-      }
     }
   }
 }

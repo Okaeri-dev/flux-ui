@@ -14,8 +14,7 @@
       "@flux-resolvers/*": ["app/resolvers/*"],
       "@flux-pipes/*": ["app/pipes/*"],
       "@flux-guards/*": ["app/guards/*"],
-      "flux-utilities": ["../../flux-utilities/src/public-api.ts"],
-      "flux-primeng-components": ["../../flux-primeng-components/src/public-api.ts"]
+      "flux-utilities": ["../../flux-utilities/src/public-api.ts"]
     }
   },
   "files": ["src/main.ts"],
@@ -25,7 +24,6 @@
     "**/*.ts",
     "node_modules/@primeng/themes/**/*.d.ts",
     "node_modules/vitest/**/*.d.ts",
-    "../flux-utilities/**/*",
-    "../flux-primeng-components/**/*"
+    "../flux-utilities/**/*"
   ]
 }

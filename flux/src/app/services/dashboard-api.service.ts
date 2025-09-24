@@ -28,7 +28,7 @@ export class DashboardApiService {
           this.messageService.add({
             severity: 'error',
             detail: error.message ?? 'Something went wrong',
-            life: 3000,
+            life: 10000,
           });
           return of([]);
         }),

@@ -7,9 +7,6 @@
     "outDir": "./dist/out-tsc",
     "strict": true,
     "paths": {
-      "flux-primeng-components": [
-        "flux-primeng-components/src/public-api.ts"
-      ],
       "flux-utilities": [
         "flux-utilities/src/public-api.ts"
       ]
