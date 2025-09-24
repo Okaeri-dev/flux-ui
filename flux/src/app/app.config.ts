@@ -11,6 +11,7 @@ import { rootReducer } from './store/reducer/flux-root-store.reducers';
 import { provideHttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import CatppuccinFrappePreset from './themes/catppuccin-frappe';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,6 +25,6 @@ export const appConfig: ApplicationConfig = {
       theme: { preset: CatppuccinFrappePreset, options: { darkModeSelector: '.dark' } },
     }),
     provideHttpClient(),
-    MessageService,
+    MessageService, provideClientHydration(withEventReplay()),
   ],
 };

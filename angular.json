@@ -16,16 +16,29 @@
             "outputPath": "dist/flux",
             "index": "flux/src/index.html",
             "browser": "flux/src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "flux/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [{ "glob": "**/*", "input": "flux/public", "output": "assets" }],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "flux/public",
+                "output": "assets"
+              }
+            ],
             "styles": [
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeflex/primeflex.css",
               "flux/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "flux/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "flux/src/server.ts"
+            }
           },
           "configurations": {
             "production": {
