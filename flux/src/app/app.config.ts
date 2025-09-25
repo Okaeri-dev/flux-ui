@@ -8,7 +8,7 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { FluxEffects } from './store/effects/flux-store.effects';
 import { rootReducer } from './store/reducer/flux-root-store.reducers';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import CatppuccinFrappePreset from './themes/catppuccin-frappe';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       theme: { preset: CatppuccinFrappePreset, options: { darkModeSelector: '.dark' } },
     }),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     MessageService,
     provideClientHydration(withEventReplay()),
   ],
