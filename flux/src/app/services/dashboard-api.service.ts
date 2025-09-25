@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { FluxApiResponse, fluxApiRoutes } from '@flux-models/flux-api.models';
 import { FluxStoreFacade } from '@flux-store/facade/flux-store.facade';
 import { MetricCard } from 'flux-utilities';
@@ -11,6 +12,7 @@ export class DashboardApiService {
   private readonly httpClient = inject(HttpClient);
   private readonly messageService: MessageService = inject(MessageService);
   private readonly fluxStoreFacade: FluxStoreFacade = inject(FluxStoreFacade);
+  private readonly platformId = inject(PLATFORM_ID);
 
   getDashboardMetrics(user?: string): Observable<MetricCard[]> {
     this.fluxStoreFacade.setPageLevelLoader(true);
@@ -25,11 +27,13 @@ export class DashboardApiService {
           }
         }),
         catchError(error => {
-          this.messageService.add({
-            severity: 'error',
-            detail: error.message ?? 'Something went wrong',
-            life: 10000,
-          });
+          if (isPlatformBrowser(this.platformId)) {
+            this.messageService.add({
+              severity: 'error',
+              detail: error.message ?? 'Something went wrong',
+              life: 10000,
+            });
+          }
           return of([]);
         }),
         finalize(() => this.fluxStoreFacade.setPageLevelLoader(false)),

@@ -44,16 +44,13 @@ FROM base AS final
 
 ENV NODE_ENV production
 
-# Install a lightweight static file server
-RUN yarn global add http-server
-
 # Copy built Angular app from build stage
 COPY --from=build /usr/src/app/dist/flux /usr/src/app/dist/flux
 
 # Set working directory to the dist folder
-WORKDIR /usr/src/app/dist/flux/browser
+WORKDIR /usr/src/app/dist/flux/server
 
 # Serve with http-server
 USER node
 EXPOSE 4200
-CMD ["http-server", ".", "-p", "4200", "--spa"]
+CMD ["node", "--inspect", "server.mjs", "-p", "4200", "--verbose"]
