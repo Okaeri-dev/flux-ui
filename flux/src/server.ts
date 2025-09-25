@@ -35,6 +35,13 @@ app.get('**', express.static(browserDistFolder, { maxAge: '1y', index: 'index.ht
 app.get('**', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
 
+  console.log(
+    `%c[${res.statusCode}]%c - %c${protocol}://${headers.host}${originalUrl}`,
+    'color: green',
+    '',
+    'color: white',
+  );
+
   commonEngine
     .render({
       bootstrap,
@@ -52,7 +59,7 @@ app.get('**', (req, res, next) => {
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 4200;
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
