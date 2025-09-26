@@ -36,7 +36,13 @@
                 { "type": "initial", "maximumWarning": "10MB", "maximumError": "15MB" },
                 { "type": "anyComponentStyle", "maximumWarning": "8kB", "maximumError": "16kB" }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "flux/src/environments/environment.ts",
+                  "with": "flux/src/environments/environment.production.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
