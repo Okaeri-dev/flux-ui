@@ -42,7 +42,7 @@ RUN yarn run build flux-utilities
 # Stage: final - lightweight image for running the app
 FROM base AS final
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Copy built Angular app from build stage
 COPY --from=build /usr/src/app/dist/flux /usr/src/app/dist/flux
