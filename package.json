@@ -10,6 +10,12 @@
     "test": "ng test",
     "sanity": "yarn pretty && yarn test && yarn build flux && yarn build flux-utilities ",
     "prepare": "husky",
+    "prestart:prod": "envsubst < flux/src/environments/environment.template.ts > flux/src/environments/environment.production.ts",
+    "prebuild:prod": "envsubst < flux/src/environments/environment.template.ts > flux/src/environments/environment.production.ts",
+    "start:prod": "ng serve --configuration=production",
+    "build:prod": "ng build flux --configuration=production",
+    "build:prod:libs": "ng build flux-utilities --configuration=production",
+    "docker:build": "GIT_COMMIT=$(git rev-parse --short HEAD) GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD) docker compose up --build",
     "serve:ssr:flux": "node dist/flux/server/server.mjs"
   },
   "private": true,

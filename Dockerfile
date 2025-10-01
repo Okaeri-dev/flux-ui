@@ -10,6 +10,15 @@ FROM node:${NODE_VERSION}-alpine AS base
 # Set working directory
 WORKDIR /usr/src/app
 
+# Set up arguments for internal env variables
+ARG GIT_COMMIT=unknown
+ARG GIT_BRANCH=unknown
+
+# Register internal env variables
+ENV GIT_COMMIT=$GIT_COMMIT
+ENV GIT_BRANCH=$GIT_BRANCH
+ENV ENV="PRODUCTION"
+
 ################################################################################
 # Stage: deps - install all dependencies
 FROM base AS deps
@@ -31,12 +40,14 @@ RUN yarn --cwd flux-utilities install --frozen-lockfile
 # Stage: build - build the Angular app
 FROM deps AS build
 
+RUN apk add --no-cache gettext
+
 # Copy the rest of the application source code
 COPY . .
 
 # Build the app (this assumes "build flux" works via ng)
-RUN yarn run build flux
-RUN yarn run build flux-utilities
+RUN yarn run build:prod
+RUN yarn run build:prod:libs
 
 ################################################################################
 # Stage: final - lightweight image for running the app
