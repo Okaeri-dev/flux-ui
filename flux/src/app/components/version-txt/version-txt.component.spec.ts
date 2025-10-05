@@ -7,10 +7,7 @@ describe('VersionTxtComponent', () => {
   let fixture: ComponentFixture<VersionTxtComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [VersionTxtComponent]
-    })
-    .compileComponents();
+    await TestBed.configureTestingModule({ imports: [VersionTxtComponent] }).compileComponents();
 
     fixture = TestBed.createComponent(VersionTxtComponent);
     component = fixture.componentInstance;
