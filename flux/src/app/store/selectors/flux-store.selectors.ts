@@ -13,3 +13,8 @@ export const getLoading: MemoizedSelector<FluxState, boolean> = createSelector(
   getFluxState,
   (state: FluxState) => state.loading,
 );
+
+export const getCurrentUrl: MemoizedSelector<FluxState, string> = createSelector(
+  getFluxState,
+  (state: FluxState) => state.currentUrl,
+);

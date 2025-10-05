@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideStore(rootReducer),
     provideEffects([FluxEffects]),
-    provideStoreDevtools({ maxAge: 25, logOnly: isDevMode() }),
+    ...(isDevMode() ? [provideStoreDevtools({ maxAge: 25 })] : []),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: { preset: CatppuccinFrappePreset, options: { darkModeSelector: '.dark' } },

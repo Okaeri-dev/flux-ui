@@ -15,6 +15,9 @@ export class DashboardApiService {
   private readonly platformId = inject(PLATFORM_ID);
 
   getDashboardMetrics(user?: string): Observable<MetricCard[]> {
+    if (!isPlatformBrowser(this.platformId)) {
+      return of([]);
+    }
     this.fluxStoreFacade.setPageLevelLoader(true);
     return this.httpClient
       .post<FluxApiResponse<MetricCard[]>>(fluxApiRoutes.dashboardMetrics, { user })

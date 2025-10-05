@@ -1,6 +1,10 @@
-<flux-navigation-bar-unauth></flux-navigation-bar-unauth>
-<flux-landing-dashboard></flux-landing-dashboard>
-<ng-container *ngIf="loading$ | async as loading">
-  <p-progress-spinner *ngIf="loading" ariaLabel="loading" class="absolute--center" />
-</ng-container>
-<p-toast position="bottom-right" />
+@if ((currentUrl$ | ngrxPush) === '/version.txt') {
+  <router-outlet></router-outlet>
+} @else {
+  <flux-navigation-bar-unauth></flux-navigation-bar-unauth>
+  <flux-landing-dashboard></flux-landing-dashboard>
+  <ng-container *ngIf="loading$ | async as loading">
+    <p-progress-spinner *ngIf="loading" ariaLabel="loading" class="absolute--center" />
+  </ng-container>
+  <p-toast position="bottom-right" />
+}

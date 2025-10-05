@@ -40,7 +40,7 @@ module.exports = tseslint.config(
   },
   {
     files: ['**/*.html'],
-    ignores: ['mock-api/.next/**', '**/index.html', '**/coverage/**/*'],
+    ignores: ['mock-api/.next/**', '**/index.html', '**/coverage/**/*', 'dist/**/*'],
     extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     plugins: { prettier },
     rules: { 'prettier/prettier': 'warn' },
