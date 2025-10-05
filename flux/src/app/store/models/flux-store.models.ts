@@ -5,4 +5,5 @@ export interface FluxState {
   isAuth: boolean;
   applicationToggles: ApplicationToggles | null;
   loading: boolean;
+  currentUrl: string;
 }

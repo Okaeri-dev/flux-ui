@@ -20,3 +20,8 @@ export const pageLevelLoader = createAction(
   '[loader] - Set page level loader',
   props<{ loading: boolean }>(),
 );
+
+export const setCurrentUrl = createAction(
+  '[Navigation] - Set current url',
+  props<{ currentUrl: string }>(),
+);
