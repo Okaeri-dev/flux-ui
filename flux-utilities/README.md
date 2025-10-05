@@ -1,63 +1,28 @@
-# FluxUtilities
+# Flux Utilities - Angular Library
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+This project is an Angular library that contains shared components, services, and other utilities used in the main `flux` application.
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+.
+├── ng-package.json
+├── package.json
+├── README.md
+├── src
+│   ├── lib
+│   └── public-api.ts
+├── tsconfig.lib.json
+├── tsconfig.lib.prod.json
+├── tsconfig.spec.json
+└── vitest.config.mts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Available Commands
 
-```bash
-ng generate --help
-```
+The following commands can be run from this directory:
 
-## Building
-
-To build the library, run:
-
-```bash
-ng build flux-utilities
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/flux-utilities
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Command | Description |
+|---|---|
+| `test` | Runs tests for this library. |
+| `build` | Builds the library. |
