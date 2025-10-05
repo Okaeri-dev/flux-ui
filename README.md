@@ -1,128 +1,75 @@
-# FluxUi
+# Flux UI Monorepo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+This is the main repository for the Flux UI project, a monorepo containing the main Angular application, a shared utilities library, and a mock API server.
 
-## Development server
+## Project Structure
 
-To start a local development server, run:
-
-```bash
-ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## 🗂️ Monorepo Folder Structure
-
-```text
-
-├── angular.json                      # Root angular configuration
-├── flux                              # Flux Shell
+.
+├── angular.json
+├── compose.yaml
+├── Dockerfile
+├── eslint.config.js
+├── flux
 │   ├── package.json
-│   ├── public                        # Public assets
+│   ├── postcss.config.mjs
+│   ├── public
 │   ├── src
-│   │   ├── app
-│   │   │   ├── app.component.ts      # UI Entrypoint
-│   │   │   ├── app.config.ts         # Root level providers and imports
-│   │   │   ├── app.routes.ts         # Root level routes
-│   │   │   ├── components/           # Reusable UI components
-│   │   │   ├── feature-toggles/      # Feature toggling logic
-│   │   │   ├── guards/               # Route guards
-│   │   │   ├── pipes/                # Custom pipes
-│   │   │   ├── resolvers/            # Route resolvers
-│   │   │   ├── services/             # Shared services
-│   │   │   └── store/                # State management
-│   │   │       ├── actions/          # Actions to trigger state updates
-│   │   │       ├── effects/          # Side effects and async actions
-│   │   │       ├── facade/           # Facade pattern for state management
-│   │   │       ├── models/           # Data models and interfaces
-│   │   │       ├── reducer/          # Reducers to modify state
-│   │   │       └── selectors/        # Selectors to retrieve state
-│   │   ├── index.html                # Bootstrap
-│   │   ├── main.ts
-│   │   └── styles.scss
+│   ├── tailwinds.config.js
 │   ├── tsconfig.app.json
+│   ├── tsconfig.json
 │   ├── tsconfig.spec.json
-├── flux-utilities                  # Shared library
+│   └── vitest.config.mts
+├── flux-utilities
 │   ├── ng-package.json
 │   ├── package.json
 │   ├── README.md
 │   ├── src
-│   │   ├── lib
-│   │   │   ├── components/         # Reusable UI components
-│   │   │   ├── guards/             # Route guards
-│   │   │   ├── pipes/              # Custom pipes
-│   │   │   ├── resolvers/          # Route resolvers
-│   │   │   ├── services/           # Shared services
-│   │   │   └── store/              # State management
-│   │   └── public-api.ts
 │   ├── tsconfig.lib.json
 │   ├── tsconfig.lib.prod.json
-│   └── tsconfig.spec.json
+│   ├── tsconfig.spec.json
+│   └── vitest.config.mts
 ├── mock-api
 │   ├── next.config.ts
 │   ├── next-env.d.ts
 │   ├── package.json
-│   ├── package-lock.json
+│   ├── public
 │   ├── src
-│   │   └── app
-│   │       ├── api
-│   │       │   ├── v1/                  # Mock API version 1
-│   │       │   ├── v2/                  # Mock API version 2
-│   │       ├── graphql                  # GraphQL related files
-│   │       ├── mock/                    # Mock data responses
-│   │       ├── models                   # Models for mock API data
-│   │       ├── store                    # Mock state management for orchestration
-│   │       └── utils                    # Helper utilities for mock API
 │   └── tsconfig.json
 ├── package.json
+├── README.Docker.md
 ├── README.md
+├── tests
+│   └── vitest
 ├── tsconfig.json
-└── yarn.lock
+├── vitest.config.mts
+└── vitest.workspace.json
 ```
+
+## Sub-projects
+
+*   [**flux**](./flux/README.md): The main Angular application.
+*   [**flux-utilities**](./flux-utilities/README.md): A library of shared components and utilities for the Angular application.
+*   [**mock-api**](./mock-api/README.md): A Next.js application that provides a mock API for development and testing.
+
+## Available Commands
+
+The following commands can be run from the root of the project:
+
+| Command | Description |
+|---|---|
+| `ng` | Execute Angular CLI commands. |
+| `start` | Starts the development server for the `flux` application. |
+| `pretty` | Lints and formats the code in the entire monorepo. |
+| `build` | Builds the `flux` application. |
+| `watch` | Builds the `flux` application and watches for changes. |
+| `test` | Runs tests for all projects. |
+| `sanity` | Runs a sanity check on the codebase, including linting, testing, and building all projects. |
+| `prepare` | Prepares the husky pre-commit hooks. |
+| `prestart:prod` | Substitutes environment variables for the production environment. |
+| `prebuild:prod` | Substitutes environment variables for the production environment. |
+| `start:prod` | Starts the development server with the production configuration. |
+| `build:prod` | Builds the `flux` application for production. |
+| `build:prod:libs` | Builds the `flux-utilities` library for production. |
+| `docker:run` | Builds and runs the docker containers for the project. |
+| `serve:ssr:flux` | Serves the server-side rendered `flux` application. |
