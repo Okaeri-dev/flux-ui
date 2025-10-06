@@ -9,7 +9,6 @@
 # https://github.com/docker/awesome-compose
 services:
   server:
-    env_file: .env
     build:
       args:
         GIT_COMMIT: "${GIT_COMMIT}"
