@@ -13,10 +13,12 @@ WORKDIR /usr/src/app
 # Set up arguments for internal env variables
 ARG GIT_COMMIT=unknown
 ARG GIT_BRANCH=unknown
+ARG API_URL=unknown
 
 # Register internal env variables
 ENV GIT_COMMIT=$GIT_COMMIT
 ENV GIT_BRANCH=$GIT_BRANCH
+ENV API_URL=$API_URL
 ENV ENV="PRODUCTION"
 
 ################################################################################
